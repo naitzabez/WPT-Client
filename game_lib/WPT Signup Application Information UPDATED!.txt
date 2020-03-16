@@ -98,7 +98,7 @@ If a users account is flagged as officer their Client will look slightly differe
 
 Q: Actually i don't trust you..
 A: The client is a runnable jar file, you can literally extract 
-all the files the program consists on and view the source code.
+all the files the program consists of and view the source code.
 I have to warn you though, the main UI class is 1k+ lines lol..
 
 Q: I've found a bug, who do i report it to?
