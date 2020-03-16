@@ -34,6 +34,13 @@ III)  Your IP adress                          - (used as key for hashmap access 
 Example image of the server UI with two users logged in: https://imgur.com/a/cNdn63U
 (IMPORTANT: This information is live information, when a user disconnects the information is lost, nothing is stored). 
 
+Q: But isn't it dangerous that you can see my IP?
+A: It's not, it's required to establish a connection
+   to the server. 
+   For instance, you can see your IP on this site: 
+   (I also used this site when i was working on the server side
+    It's a great tool).
+    
 Q: What language is this application written in? 
 A: Java, write once run everywhere. Shouldnt have issues with your OS (tested windows/mac/raspbian so far).
 
