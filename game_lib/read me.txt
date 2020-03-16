@@ -19,7 +19,10 @@ What you cannot do:
 NOTE: When you sign a character to a raid they wont be confirmed. 
       This means that you will not see your signed up characters 
       inside Raid Confirms or Raid Overview tab. 
-
+      Also, the characters inside raid confirm/overview are
+      characters that I have hard coded in to test those
+      features. So dont freak out if your character is on 
+      that list, I added them. 
 
 THIS VERSION IS MAINLY FOR SERVER TESTING.
 	
