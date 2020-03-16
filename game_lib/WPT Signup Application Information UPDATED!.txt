@@ -37,7 +37,7 @@ Example image of the server UI with two users logged in: https://imgur.com/a/cNd
 Q: But isn't it dangerous that you can see my IP?
 A: It's not, it's required to establish a connection
    to the server. 
-   For instance, you can see your IP on this site: 
+   For instance, you can see your IP on this site: https://canyouseeme.org/
    (I also used this site when i was working on the server side
     It's a great tool).
     
