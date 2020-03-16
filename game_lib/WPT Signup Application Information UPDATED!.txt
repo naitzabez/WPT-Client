@@ -1,0 +1,100 @@
+WPT Signup Application - Q/A
+
+Q: What is WPT Signup Application?
+A: WPT Signup is an application used to signup for raids. It also has additional features to make things easier.
+
+Q: Why should we use this over google docks?
+A: The application makes it easier to find available raids, it eases work for officers as the server will process the information. 
+   You can also see more stuff such as piecharts, diagrams & sorted lists etc. 
+
+Q: Speaking of server, who's hosting it?
+A: The server is being hosted by me (Sebbe) on a Raspberry PI3.
+
+Q: Actually what is a server? No joke.. 
+A: A server is just a computer (just like your pc or mobile phone) that multiple people can access.
+
+Q: What information does the server store?
+A: The server stores login data of all users (username & password), characters of of all users & data for raid events.
+(IMPORTANT: Use simple "throw-away" passwords, i don't want to be accused of account theft just because you used your "real" password that 
+you use for other applications such as Email or WoW. For example abc123 or something silly).
+
+Q: Is anything stored client side?
+A: No, everything is stored server side. This makes it so i can release a new client version without screwing up stored data. 
+   You can also login to accounts of friends if they want you to sign up their characters. 
+(IMPORTANT: Might include autofill from file on client side in the future).
+
+Q: What else can you see?
+A: In the server UI i can see:                REASON:
+  I)  If a user is logged in/out.             - (debug information/stat)
+ II)  What server is looking for from user    - (debug information/stat)
+III)  Your IP adress                          - (used as key for hashmap access server side so server can send data to individual users)
+ IV)  Amount of users currently connected     - (debug information/stat)  
+  V)  Server uptime                           - (debug information/stat)
+
+Example image of the server UI with two users logged in: https://imgur.com/a/cNdn63U
+(IMPORTANT: This information is live information, when a user disconnects the information is lost, nothing is stored). 
+
+Q: What language is this application written in? 
+A: Java, write once run everywhere. Shouldnt have issues with your OS (tested windows/mac/raspbian so far).
+
+Q: Will a mobile application be released aswell?
+A: Most likely not. This would mean that i have to maintain three different clients (pc, android & ios) and the server.
+   That's alot of work. However what's more likely is that i scrap the pc client and simply create a website for WPT where
+   the signup is one of many features. This would mean that you can do signups from phone and pc. It would also mean that WPT
+   now has a website platform that can be built upon, additional features such as guild reqruitment perhaps? 
+   If I end up going this route then basically the desktop app will be redundant and no longer be supported. 
+   This also means we need to have a seceret key on our discord that's required when a user wants to create an account on the 
+   site to prevent outsiders from creating accounts on our site. 
+
+   EX of user create) (discord key = 2415abc44)
+   Format             -> [Username] [Password] [Pw repeat] [key] 
+   Valid user create  -> [Sebbe   ] [abc123  ] [abc123   ] [2415abc44] SUCCESS ->(key match    )
+   Invalid user create-> [Sebbe   ] [abc123  ] [abc123   ] [ff34csew4] ERROR   ->(key missmatch)
+
+   (IMPORTANT: I can implement a keyupdate function server side so that i can generate new keys on the fly if one where to be leaked)
+
+   (IMPORTANT2: If key where to be leaked it's not anything dangerous, it simply allows outsiders to create accounts and sign up for our raids,
+   it's just going to be annoying for admins to ban those). 
+
+   (The reason we dont use this format for the pc app is because the link to the github is in the discord so the link is the "key" in itself).
+   
+
+Q: How does this application work? 
+A: Basically, users (client side) send requests to the server (such as "login [username] [password]", "fetch raid_1 signups", 
+   "update raid_1 signups [charactername]" etc (those are not the actual strings being sent, just examples)) 
+   and if requests are legal the server will respond to the client with either the data you asked for or a handshake for update confirmation. 
+
+Q: Do i need to create a new user for every character i wish to raid on?
+A: No, a single user will have its own file stored server side that contains all their characters. 
+Ex)
+ **Inside server**
+ USER{                    
+ File1: username.txt      <- Your Username & password.
+ File2: char_username.txt <- ALL your characters.
+ }
+
+Q: How many users can the server hold?
+A: The cap is hardcoded to 100 users, though, i highly doubt it will ever go above 10 users concurrent. 
+
+Q: If the sever chokes and dies, will all information be lost?
+A: No, the server updates files on the fly so basically all data changes are saved immedietly. 
+   I simply just have to restart the server. 
+
+Q: Does officers have additional commands that normal users dont have?
+A: Yes:
+  I) Ban user / Unban user
+ II) Create / Remove raid event
+III) Accept/Decline raid signups
+ IV) Release "official" raid event (when all sign ups are done).
+If a users account is flagged as officer their Client will look slightly different (basically additional windows/buttons for the commands).
+
+Q: I've found a bug, who do i report it to?
+A: PM Sebbe on discord with detailed information. 
+
+Q: What types of updates can we expect in the future?
+A: Mainly bugfixes, prettier UI & perhaps more features if people have suggestions (such as autofill).
+   If enough people want it i might develop the WPT site instead and scrap the client entierly.
+
+FYI: Client side fetches raid data every 2-3 sec while in menu, it also fetches raid data when any "back" button is pressed.
+
+Sebbe

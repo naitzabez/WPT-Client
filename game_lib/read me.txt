@@ -1,0 +1,36 @@
+WPT Client - Server testing / early release
+
+In this version you can:
+{
+	Create a user
+	Add characters to that user / Delete characters
+	Sign up for raids / remove signup
+	View confirmed players
+	View confirmed players by graphs/piecharts
+}
+
+What you cannot do:
+{
+	Confirm players (admin feature not yet implemented)
+	Create/delete raid events (admin feature not yet implemented)
+	Ban/unban users (admin feature not yet implemented)
+}
+
+NOTE: When you sign a character to a raid they wont be confirmed. 
+      This means that you will not see your signed up characters 
+      inside Raid Confirms or Raid Overview tab. 
+
+
+THIS VERSION IS MAINLY FOR SERVER TESTING.
+	
+What i want tested:
+	YOU creating an account and logging in, and sign up for raid.
+	Watch the "raid confirms" and "raid overview" tabs.
+	Logout
+
+	Wait roughly 1h-2h
+	Log back in, see if your data is still there:
+		I) Do you have same characters as last session?
+		II) Is your character still signed up?
+
+Thank you for testing, pm any bug/freezes of the client to sebbe on discord with detailed information.
