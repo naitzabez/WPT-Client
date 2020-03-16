@@ -24,6 +24,11 @@ NOTE: When you sign a character to a raid they wont be confirmed.
       features. So dont freak out if your character is on 
       that list, I added them. 
 
+NOTE: Client might appear "slow" at times, especially when going back to main menu
+      This is NOT a client side issue but rather the server having to do alot of 
+      print statements (ldebug code that will be cut in final release) that slows 
+      down data sends to client (which happens in main menu).
+      
 THIS VERSION IS MAINLY FOR SERVER TESTING.
 	
 What i want tested:
