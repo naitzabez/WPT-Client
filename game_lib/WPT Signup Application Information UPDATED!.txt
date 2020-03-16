@@ -43,6 +43,7 @@ A: It's not, it's required to establish a connection
     
 Q: What language is this application written in? 
 A: Java, write once run everywhere. Shouldnt have issues with your OS (tested windows/mac/raspbian so far).
+   It built with default java libraries, alot of visual elements are made by me such as buttons & text fields. 
 
 Q: Will a mobile application be released aswell?
 A: Most likely not. This would mean that i have to maintain three different clients (pc, android & ios) and the server.
